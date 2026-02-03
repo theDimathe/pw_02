@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RockySpin Paywall</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="hero">
+        <div class="brand">
+          <div class="brand__logo" aria-hidden="true">RS</div>
+          <div>
+            <p class="brand__name">ROCKYSPIN</p>
+            <p class="brand__tag">Instant bonus checkout</p>
+          </div>
+        </div>
+        <div class="hero__content">
+          <div class="hero__text">
+            <h1>Just one step for big wins</h1>
+            <p>We'll check your bonus and instantly activate the promo for the game.</p>
+            <div class="hero__actions">
+              <button class="btn btn--ghost" id="preview-bonus">Preview bonus</button>
+              <button class="btn" id="apply-bonus">Apply bonus</button>
+            </div>
+            <div class="status" id="bonus-status" role="status" aria-live="polite"></div>
+          </div>
+          <div class="hero__card" aria-hidden="true">
+            <div class="hero__card-top">Chicken Road 2</div>
+            <div class="hero__card-body">
+              <div class="badge">+250 FS</div>
+              <div class="hero__card-art"></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="sheet">
+        <section class="summary">
+          <div class="summary__row">
+            <span>Game you win</span>
+            <span class="summary__title">Chicken Road 2</span>
+          </div>
+          <div class="summary__row">
+            <span>Original price</span>
+            <span>$29.99</span>
+          </div>
+          <div class="summary__row">
+            <span>Promo discount</span>
+            <span class="summary__discount" id="promo-discount">- $0.00</span>
+          </div>
+          <div class="summary__row summary__row--total">
+            <span>Total</span>
+            <span class="summary__total" id="total-price">$29.99</span>
+          </div>
+          <div class="summary__meta">
+            <p>30 days moneyback guarantee. Cancel anytime.</p>
+            <div class="meter" aria-label="Bonus activation">
+              <div class="meter__bar" id="bonus-meter"></div>
+            </div>
+            <div class="meter__labels">
+              <span>Bonus activation</span>
+              <span id="bonus-percent">0%</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="offer">
+          <h2>Top up with $100 and get $300 + 250 FS</h2>
+          <div class="offer__actions">
+            <button class="btn btn--ghost" id="simulate-empty">Simulate empty</button>
+            <button class="btn btn--ghost" id="simulate-error">Simulate error</button>
+            <button class="btn btn--ghost" id="simulate-loading">Simulate loading</button>
+          </div>
+          <div class="state-panel" id="state-panel">
+            <p>Ready to complete payment. We'll verify details before confirming.</p>
+          </div>
+        </section>
+
+        <section class="payment" aria-labelledby="payment-title">
+          <div class="payment__header">
+            <h3 id="payment-title">Card details</h3>
+            <div class="payment__logos">
+              <span class="chip">VISA</span>
+              <span class="chip">MC</span>
+              <span class="chip">AMEX</span>
+            </div>
+          </div>
+
+          <form id="payment-form" novalidate>
+            <label class="field">
+              <span>Card number</span>
+              <input
+                type="text"
+                inputmode="numeric"
+                autocomplete="cc-number"
+                name="cardNumber"
+                placeholder="1234 5678 9012 3456"
+                required
+              />
+              <small class="field__hint">Only digits, 16 numbers.</small>
+            </label>
+
+            <div class="field-row">
+              <label class="field">
+                <span>Expiration date</span>
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="cc-exp"
+                  name="cardExpiry"
+                  placeholder="MM/YY"
+                  required
+                />
+              </label>
+              <label class="field">
+                <span>Security code</span>
+                <input
+                  type="password"
+                  inputmode="numeric"
+                  autocomplete="cc-csc"
+                  name="cardCvc"
+                  placeholder="123"
+                  required
+                />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Country</span>
+              <select name="country" required>
+                <option value="" selected disabled>Choose country</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Poland">Poland</option>
+                <option value="Ukraine">Ukraine</option>
+                <option value="Spain">Spain</option>
+              </select>
+            </label>
+
+            <label class="field field--checkbox">
+              <input type="checkbox" name="terms" required />
+              <span>Agree to subscription terms and automatic renewal.</span>
+            </label>
+
+            <button class="btn btn--primary" type="submit" id="confirm-btn" disabled>
+              Confirm purchase
+            </button>
+            <p class="footnote">
+              By clicking "Confirm purchase", you agree to automatic subscription renewal.
+              First month is <strong>$14.99</strong>, then $29.99 every month.
+            </p>
+          </form>
+        </section>
+
+        <section class="secure">
+          <p class="secure__title">Guaranteed safe checkout</p>
+          <div class="secure__icons">
+            <span>PayPal</span>
+            <span>Visa</span>
+            <span>Mastercard</span>
+            <span>Amex</span>
+          </div>
+          <p class="secure__note">All transactions are secure and encrypted.</p>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
