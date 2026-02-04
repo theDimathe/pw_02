@@ -33,13 +33,29 @@ const validateForm = () => {
   const isValid =
     /^\d{16}$/.test(cardNumber) &&
     /^\d{2}\/\d{2}$/.test(cardExpiry) &&
-    /^\d{3}$/.test(cardCvc) &&
+    /^\d{3,4}$/.test(cardCvc) &&
     Boolean(country);
 
   confirmBtn.disabled = !isValid;
 };
 
 form.addEventListener("input", validateForm);
+form.cardNumber.addEventListener("input", () => {
+  const digits = form.cardNumber.value.replace(/\D/g, "").slice(0, 16);
+  form.cardNumber.value = digits.replace(/(\d{4})(?=\d)/g, "$1 ");
+});
+
+form.cardExpiry.addEventListener("input", () => {
+  const digits = form.cardExpiry.value.replace(/\D/g, "").slice(0, 4);
+  const month = digits.slice(0, 2);
+  const year = digits.slice(2, 4);
+  form.cardExpiry.value = [month, year].filter(Boolean).join("/");
+});
+
+form.cardCvc.addEventListener("input", () => {
+  const digits = form.cardCvc.value.replace(/\D/g, "").slice(0, 4);
+  form.cardCvc.value = digits;
+});
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   confirmBtn.disabled = true;
