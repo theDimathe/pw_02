@@ -165,7 +165,9 @@ body {
 }
 
 .card__brands div {
-scale: .55;
+  scale: .55;
+  margin-right: -10px;
+  margin-left: -10px;
 }
 
 .field {
