@@ -16,52 +16,52 @@ body {
   background: radial-gradient(circle at top, #1d1631 0%, #120f19 55%, #0c0a12 100%);
   display: flex;
   justify-content: center;
-  padding: 16px 12px 40px;
+  padding: 24px 16px 48px;
 }
 
 .paywall {
   width: min(420px, 100%);
   background: linear-gradient(180deg, #231b2f 0%, #1a1424 100%);
   border-radius: 26px;
-  padding: 18px 18px 28px;
+  padding: 22px 20px 34px;
   box-shadow: 0 24px 50px rgba(5, 3, 14, 0.7);
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 24px;
 }
 
 .paywall__header {
   display: flex;
   justify-content: center;
-  padding-top: 6px;
+  padding-top: 10px;
 }
 
 .brand-logo {
-  height: 34px;
+  height: 36px;
   width: auto;
 }
 
 .hero {
   border-radius: 20px;
-  padding: 18px;
+  padding: 22px;
   background: linear-gradient(140deg, #2c223b, #241b33);
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .hero__copy h1 {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: 700;
   line-height: 1.15;
 }
 
 .hero__subtitle {
-  margin-top: 8px;
+  margin-top: 12px;
   color: #f6f0ff;
   opacity: 0.75;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .hero__media {
@@ -71,15 +71,15 @@ body {
 }
 
 .hero__media img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   object-fit: contain;
 }
 
 .summary {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
   font-size: 0.95rem;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -117,6 +117,7 @@ body {
 .summary__divider {
   height: 1px;
   background: rgba(255, 255, 255, 0.08);
+  margin: 4px 0;
 }
 
 .summary__note {
@@ -127,18 +128,19 @@ body {
 .promo {
   text-align: center;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #f8f5ff;
+  margin-top: 4px;
 }
 
 .card {
   border-radius: 20px;
-  padding: 16px;
+  padding: 18px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .card__header {
@@ -164,7 +166,7 @@ body {
 
 .field {
   display: grid;
-  gap: 6px;
+  gap: 8px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.7);
 }
@@ -172,7 +174,7 @@ body {
 .field input,
 .field select {
   width: 100%;
-  padding: 12px 14px;
+  padding: 13px 14px;
   border-radius: 14px;
   border: 1px solid transparent;
   background: rgba(255, 255, 255, 0.05);
@@ -204,7 +206,7 @@ body {
 }
 
 .cta {
-  margin-top: 6px;
+  margin-top: 8px;
   width: 100%;
   padding: 14px 16px;
   border-radius: 999px;
@@ -243,6 +245,7 @@ body {
   gap: 6px;
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
 }
 
 .brand-footer strong {
@@ -253,7 +256,7 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .security__title {
@@ -283,7 +286,7 @@ body {
   color: rgba(255, 255, 255, 0.55);
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   line-height: 1.4;
 }
 
@@ -295,7 +298,7 @@ body {
 .toast {
   position: fixed;
   left: 50%;
-  bottom: 12px;
+  bottom: 16px;
   transform: translateX(-50%);
   background: rgba(31, 24, 45, 0.95);
   padding: 10px 16px;
@@ -310,6 +313,42 @@ body {
 
 .toast--visible {
   opacity: 1;
+}
+
+.document {
+  width: min(720px, 100%);
+  margin: 24px auto;
+  padding: 24px 20px 40px;
+  background: linear-gradient(180deg, #231b2f 0%, #1a1424 100%);
+  border-radius: 20px;
+  box-shadow: 0 24px 50px rgba(5, 3, 14, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  line-height: 1.6;
+}
+
+.document h1 {
+  font-size: 1.8rem;
+}
+
+.document h2 {
+  font-size: 1.1rem;
+  margin-top: 8px;
+}
+
+.document a {
+  color: #f8f5ff;
+}
+
+.document__back {
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.document__back:hover {
+  color: #fff;
 }
 
 @media (max-width: 360px) {
